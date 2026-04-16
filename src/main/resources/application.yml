@@ -35,3 +35,12 @@ logging:
   level:
     org.springframework.ai: INFO
     com.example.springai: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+  metrics:
+    tags:
+      application: spring-ai-service
