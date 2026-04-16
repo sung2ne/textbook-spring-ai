@@ -33,8 +33,8 @@ dependencies {
     // Spring AI — 벡터 스토어 (PART 03에서 활성화)
     // implementation("org.springframework.ai:spring-ai-starter-vector-store-pgvector")
 
-    // Spring AI — 문서 로더 (PART 03에서 활성화)
-    // implementation("org.springframework.ai:spring-ai-pdf-document-reader")
+    // PART 03 Ch 02: 문서 로더
+    implementation("org.springframework.ai:spring-ai-pdf-document-reader")
 
     // 유틸
     compileOnly("org.projectlombok:lombok")
