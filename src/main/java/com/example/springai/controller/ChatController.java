@@ -21,9 +21,16 @@ public class ChatController {
         return chatService.chat(message);
     }
 
-    // PART 01 Ch 04: 구조화된 응답
     @GetMapping("/recommend")
     public ChatService.BookRecommendation recommend(@RequestParam String topic) {
         return chatService.recommend(topic);
+    }
+
+    // PART 02 Ch 01: 대화 메모리 활용
+    @GetMapping("/conversation")
+    public String conversation(
+            @RequestParam String sessionId,
+            @RequestParam String message) {
+        return chatService.conversationChat(sessionId, message);
     }
 }
