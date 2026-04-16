@@ -30,8 +30,9 @@ dependencies {
     implementation("org.springframework.ai:spring-ai-starter-model-openai")
     implementation("org.springframework.ai:spring-ai-starter-model-ollama")
 
-    // Spring AI — 벡터 스토어 (PART 03에서 활성화)
-    // implementation("org.springframework.ai:spring-ai-starter-vector-store-pgvector")
+    // PART 03 Ch 03: 벡터 스토어
+    implementation("org.springframework.ai:spring-ai-starter-vector-store-pgvector")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
 
     // PART 03 Ch 02: 문서 로더
     implementation("org.springframework.ai:spring-ai-pdf-document-reader")

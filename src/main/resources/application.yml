@@ -4,6 +4,10 @@ spring:
   profiles:
     active: dev  # 개발: dev, 운영: prod
 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springai
+    username: springai
+    password: springai
   ai:
     ollama:
       base-url: http://localhost:11434
@@ -17,6 +21,12 @@ spring:
           model: gpt-4o-mini
       connect-timeout: 10s
       read-timeout: 60s
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 1536
 
 server:
   port: 8080
