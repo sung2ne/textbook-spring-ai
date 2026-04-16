@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: spring-ai
+
+  # AI 프로바이더 설정
+  ai:
+    # Ollama — 로컬 개발용 (무료)
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3.2
+
+    # OpenAI — 환경변수로 관리 (PART 01 Ch 05)
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      chat:
+        options:
+          model: gpt-4o-mini
+      connect-timeout: 10s
+      read-timeout: 60s
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.ai: INFO
+    com.example.springai: DEBUG
