@@ -12,7 +12,6 @@ public class ChatService {
         this.chatClient = chatClient;
     }
 
-    // PART 01 Ch 04: 기본 텍스트 응답
     public String chat(String message) {
         return chatClient
                 .prompt()
@@ -20,4 +19,15 @@ public class ChatService {
                 .call()
                 .content();
     }
+
+    // PART 01 Ch 04: 구조화된 응답 (entity 사용)
+    public BookRecommendation recommend(String topic) {
+        return chatClient
+                .prompt()
+                .user("Java " + topic + " 관련 책 한 권을 추천해주세요.")
+                .call()
+                .entity(BookRecommendation.class);
+    }
+
+    public record BookRecommendation(String title, String author, String reason) {}
 }

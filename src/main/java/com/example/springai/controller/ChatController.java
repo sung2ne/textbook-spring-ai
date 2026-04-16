@@ -16,9 +16,14 @@ public class ChatController {
         this.chatService = chatService;
     }
 
-    // PART 01 Ch 04: 기본 채팅
     @GetMapping
     public String chat(@RequestParam String message) {
         return chatService.chat(message);
+    }
+
+    // PART 01 Ch 04: 구조화된 응답
+    @GetMapping("/recommend")
+    public ChatService.BookRecommendation recommend(@RequestParam String topic) {
+        return chatService.recommend(topic);
     }
 }
