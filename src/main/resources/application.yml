@@ -1,17 +1,15 @@
 spring:
   application:
     name: spring-ai
+  profiles:
+    active: dev  # 개발: dev, 운영: prod
 
-  # AI 프로바이더 설정
   ai:
-    # Ollama — 로컬 개발용 (무료)
     ollama:
       base-url: http://localhost:11434
       chat:
         options:
           model: llama3.2
-
-    # OpenAI — 환경변수로 관리 (PART 01 Ch 05)
     openai:
       api-key: ${OPENAI_API_KEY:}
       chat:
