@@ -41,6 +41,11 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
+    // PART 02 Ch 05: 에러 핸들링
+    implementation("org.springframework.retry:spring-retry")
+    implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation("io.github.resilience4j:resilience4j-spring-boot3:2.2.0")
+
     // 테스트
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
